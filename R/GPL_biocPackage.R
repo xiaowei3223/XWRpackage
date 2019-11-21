@@ -11,9 +11,9 @@
 
 
 GPL_biocPackage = function(GPL){
-  data("data/GPL_pkg.rda")
+  #data = load("data/GPL_pkg.rda")
   pkg = GPL_pkg[which(GPL_pkg$gpl == GPL), ]$bioc_package
-  rm(GPL_pkg)
+  #rm(GPL_pkg)
   pkg
 }
 
