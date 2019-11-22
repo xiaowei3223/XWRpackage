@@ -2,7 +2,7 @@
 Myself R package
 
 
-install this package:
+## install this package:
 ```
 devtools::install_github('xiaowei3223/XWRpackage')
 ```
