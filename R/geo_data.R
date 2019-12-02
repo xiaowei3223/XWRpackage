@@ -10,7 +10,7 @@
 #'
 #'
 #'
-#' @example
+#' @examples
 #' Y = geo_data("GSE2553")
 #' names(Y$expression_data)
 #' names(Table(Y$GPL_ann))

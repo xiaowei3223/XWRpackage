@@ -21,6 +21,24 @@ input geo accession and gene id which you want, then this function will help you
 if annotation not has your input gene id, then will be only return raw expression data. Also, I should remind you, after mapped gene id, I do not remove those
 data not successful map the gene id, which is NA I do not remove.
 }
+\examples{
+Y = geo_data("GSE2553")
+names(Y$expression_data)
+names(Table(Y$GPL_ann))
+expression_data <- Y$expression_data
+GPL_ann <- Y$GPL_ann
+pheno_Data <- Y$pheno_Data
+
+
+
+
+
+
+
+
+
+
+}
 \author{
 xiaowei
 }
