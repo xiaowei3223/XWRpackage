@@ -9,7 +9,7 @@ geo_data(geo, geneID = "SYMBOL")
 \arguments{
 \item{geo}{a character, one geo accession}
 
-\item{geneID}{a character, default as "SYMBOL". So you can choose one of "SYMBOL", "ENTREZ" and "RefSeq"}
+\item{geneID}{a character, default as "SYMBOL". So you can choose one of "SYMBOL", "ENTREZ" and "RefSeq". If you don't want convert the gene id, this argument set as "NO".}
 }
 \value{
 a list which included expression data, phenotype data, annotation data and GPL number
