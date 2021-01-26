@@ -1,4 +1,4 @@
-#' @title  make the result of kegg.download to GeneSet
+#' @title make the result of kegg.download to GeneSet
 #' @author xiaowei
 #'
 #' @description make the result of kegg.download to GeneSet
@@ -19,29 +19,21 @@
 #'
 
 ###############################################################################
-# install packages
-###############################################################################
-if (!requireNamespace("BiocManager", quietly = TRUE))
-  install.packages("BiocManager", dependencies = TRUE)
-
-requiredPackages <- c("KEGGREST", "GSEABase")
-newPackages <- requiredPackages[!(requiredPackages %in% installed.packages()[,"Package"])]
-if(length(newPackages)) BiocManager::install(newPackages, ask = TRUE)
-
-
-
-suppressPackageStartupMessages(library(KEGGREST))
-suppressPackageStartupMessages(library(GSEABase))
-
-
-
-###############################################################################
 # Function -- path.to.GeneSet
 # description: make the result of kegg.download to GeneSet
 # input: the result of kegg.download
 # Output: A GeneSet object
 ###############################################################################
-path.to.geneSet <- function(kegg.path){
+path2geneSet <- function(kegg.path){
+  if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager", dependencies = TRUE)
+
+  requiredPackages <- c("KEGGREST", "GSEABase")
+  newPackages <- requiredPackages[!(requiredPackages %in% installed.packages()[,"Package"])]
+  if(length(newPackages)) BiocManager::install(newPackages, ask = TRUE)
+  suppressPackageStartupMessages(library(KEGGREST))
+  suppressPackageStartupMessages(library(GSEABase))
+
   genes <- kegg.path$GENE
 
   if(!is.null(genes)){

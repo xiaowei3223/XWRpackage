@@ -1,11 +1,11 @@
-#' @title  download geneset of one species from MsigDB and make it as GeneSetCollection
+#' @title download geneset of one species from MsigDB and make it as GeneSetCollection
 #' @author xiaowei
 #'
 #' @description download geneset of one species from MsigDB and make it as GeneSetCollection
 #' @details We always use GeneSet/GeneSetCollection in GeneSet Enrichment Analysis, so it is important to make those pathway as GeneSet.
 #' @param species Species name, such as Homo sapiens or Mus musculus. Details see: msigdbr_species()
 #' @param category MSigDB collection abbreviation, such as H or C1.
-#' @geneIdType  Default as "entrez". one of "entrez" and "symbol"
+#' @param geneIdType  Default as "entrez". one of "entrez" and "symbol"
 #' @param subcategory MSigDB sub-collection abbreviation, such as CGP or BP. Details see: msigdbr_collections()
 #' @param outputfile strings for GMT format file. Default as NULL. If it is not NULL, it will save GMT file in your working directory.
 #'
@@ -32,12 +32,6 @@
 ###############################################################################
 
 ###############################################################################
-# install packages
-###############################################################################
-if (!requireNamespace("msigdbr", quietly = TRUE)){install.packages("msigdbr", dependencies = TRUE)}
-if (!requireNamespace("GSEABase", quietly = TRUE)){BiocManager::install("GSEABase", dependencies = TRUE)}
-
-###############################################################################
 # Function -- msigdbr.geneSet
 # description: download pathway of one organism from msigdb and make it as GeneSetCollection
 # input:
@@ -49,6 +43,8 @@ if (!requireNamespace("GSEABase", quietly = TRUE)){BiocManager::install("GSEABas
 # output: A GeneSetCollection object or/and GMT file
 ###############################################################################
 msigdb.geneSet <- function(species, category = NULL, subcategory = NULL, geneIdType ="entrez", outputfile = NULL){
+  if (!requireNamespace("msigdbr", quietly = TRUE)){install.packages("msigdbr", dependencies = TRUE)}
+  if (!requireNamespace("GSEABase", quietly = TRUE)){BiocManager::install("GSEABase", dependencies = TRUE)}
   suppressPackageStartupMessages(library(msigdbr))
   suppressPackageStartupMessages(library(GSEABase))
   print(subcategory)
