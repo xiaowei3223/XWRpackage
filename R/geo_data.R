@@ -73,8 +73,8 @@ geo_data <- function(geo,geneID = 'SYMBOL'){
       #转换ID
       expr_data <- merge(x= exp, y=iddata, by = "ID", all.x = T, all.y = F)
       expr_data1 <- expr_data[,c("ID", geneID2)]
-      expr_data2 <- expr_data[!( names(expr_data) %in% c("ID", geneID2) )]
-      expr_data <- cbind(expr_data1,expr_data2)
+      expr_data2 <- expr_data[!( names(expr_data) %in% c("ID", geneID2) )] #选择不是ID和指定基因ID的列
+      expr_data <- cbind(expr_data1,expr_data2) #合并两者
       rm(expr_data1, expr_data2, exp)
     }else{
       expr_data <- exp}
