@@ -13,6 +13,7 @@
 #'
 #' @examples
 #' library(XWRpackage)
+#' library(KEGGREST)
 #' pathway.list <- keggList("pathway", organism = "hsa")
 #' kegg.path <- kegg.download(pathway.list = pathway.list[1:11])
 #' kegg.geneSet <- path.to.geneSet(kegg.path[[1]])

@@ -20,7 +20,7 @@
 #'
 #' hsa.msigdb <- msigdb.geneSet(species = "Homo sapiens", category = "C2", subcategory = "CP:KEGG")
 #' hsa.msigdb <- msigdb.geneSet(species = "Homo sapiens", category = "C2", subcategory = "CP:KEGG", outputfile = "msigdb.human.kegg.gmt")
-#' hsa.msigdb <- msigdb.geneSet(species = "Homo sapiens", category = "C5", subcategory = ""GO:BP,GO:CC,GO:MF"", geneIdType = "symbol")
+#' hsa.msigdb <- msigdb.geneSet(species = "Homo sapiens", category = "C5", subcategory = "GO:BP,GO:CC,GO:MF", geneIdType = "symbol")
 #'
 #'
 

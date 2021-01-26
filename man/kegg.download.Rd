@@ -21,6 +21,7 @@ ignored the numbers of query. So this functions is extended the function KEGGRES
 }
 \examples{
 library(XWRpackage)
+library(KEGGREST)
 pathway.list <- keggList("pathway", organism = "hsa")
 kegg.path <- kegg.download(pathway.list = pathway.list[1:11])
 

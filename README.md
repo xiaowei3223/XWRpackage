@@ -72,3 +72,13 @@ query = "match (B:chrY{Name:'Bin28428'})
 details <- cypher(graph, query)
 gene_from_node_Detials(details[1,])
 ```
+
+## 从KEGG或MSigDB中下载pathway/GeneSet,并输出为GMT文件
+```
+# 从MSigDB中下载c2.human.kegg.msigdb并输出gmt文件
+hsa.msigdb <- msigdb.geneSet(species = "Homo sapiens", category = "C2", subcategory = "CP:KEGG", outputfile = "msigdb.human.kegg.gmt") 
+
+#从kegg中下载猪的pathway并输出gmt文件
+ptr.geneSet <- kegg.geneSet("ptr", outputfile = "ptr.gmt") # Pan troglodytes (chimpanzee) 
+
+```
