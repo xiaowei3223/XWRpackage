@@ -1,6 +1,10 @@
 {
-    "path" : "D:/lab/R_project/XWRpackage",
+    "path" : "D:/lab/R_project/XWRpackage/R",
     "sortOrder" : [
+        {
+            "ascending" : false,
+            "columnIndex" : 4
+        },
         {
             "ascending" : true,
             "columnIndex" : 2
